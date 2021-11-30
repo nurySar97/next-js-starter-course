@@ -1,7 +1,12 @@
 import Link from "next/link";
+import Head from "next/head";
+
 const Index = () => {
   return (
     <>
+      <Head>
+        <title>Next App | Index</title>
+      </Head>
       <h1>Hello from Index page!</h1>
       <p>
         <Link href="/about">
