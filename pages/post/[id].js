@@ -8,7 +8,7 @@ const Post = () => {
   } = useRouter();
 
   return (
-    <MainLayout>
+    <MainLayout title={`Post: ${id}`}>
       <h1>Hello from Post:{id} page!</h1>
       <Link href="/">
         <a>Return Main Page!</a>

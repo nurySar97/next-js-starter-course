@@ -1,13 +1,8 @@
 import { MainLayout } from "./../layouts";
-import Head from "next/head";
-
 
 const Index = () => {
   return (
-    <MainLayout>
-      <Head>
-        <title>Next App | Index</title>
-      </Head>
+    <MainLayout title={'Main page'}>
       <h1>Hello from Index page!</h1>
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde nisi quo

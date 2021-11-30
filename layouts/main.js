@@ -1,9 +1,19 @@
 import Link from "next/link";
+import Head from "next/head";
 
 const Main = (props) => {
-  const { children } = props;
+  const { children, title } = props;
   return (
     <>
+      <Head>
+        <title>Next App | {title}</title>
+        <meta name="keywords" content="next,javascript,react,ssr,nextjs" />
+        <meta
+          name="description"
+          content="this is youtube tutorial for next js!"
+        />
+        <meta charSet="utf-8" />
+      </Head>
       <nav>
         <Link href="/">
           <a>Home</a>

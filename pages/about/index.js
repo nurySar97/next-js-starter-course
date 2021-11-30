@@ -6,7 +6,7 @@ const About = () => {
     return () => Router.push(path);
   };
   return (
-    <MainLayout>
+    <MainLayout title={'About page'}>
       <h1>Hello from About page!</h1>
       <p>
         <button onClick={linkHandler("/")}>Go back to home page!</button>
