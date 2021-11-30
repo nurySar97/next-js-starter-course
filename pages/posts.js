@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Head from "next/head";
+import { MainLayout } from "../layouts";
 
 const Posts = () => {
   return (
-    <>
+    <MainLayout>
       <Head>
         <title>Next App | Posts</title>
         <meta name="keywords" content="next,javascript,react,ssr,nextjs" />
@@ -11,11 +12,8 @@ const Posts = () => {
         <meta charSet='utf-8' />
       </Head>
       <h1>Hello from Posts page!</h1>
-      <Link href="/">
-        <a>Return Main Page!</a>
-      </Link>
-    </>
+    </MainLayout>
   );
 };
 
-export default Posts;
+export default Posts; 
