@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-const Posts = () => {
+const Author = () => {
   return (
     <>
-      <h1>Hello from Posts page!</h1>
+      <h1>Hello from About Author page!</h1>
       <Link href="/">
         <a>Return Main Page!</a>
       </Link>
@@ -11,4 +11,4 @@ const Posts = () => {
   );
 };
 
-export default Posts;
+export default Author;
