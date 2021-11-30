@@ -6,6 +6,9 @@ const Posts = () => {
     <>
       <Head>
         <title>Next App | Posts</title>
+        <meta name="keywords" content="next,javascript,react,ssr,nextjs" />
+        <meta name="description" content="this is youtube tutorial for next js!" />
+        <meta charSet='utf-8' />
       </Head>
       <h1>Hello from Posts page!</h1>
       <Link href="/">
