@@ -9,10 +9,10 @@ const About = () => {
     <MainLayout title={"About page"}>
       <h1>Hello from About page!</h1>
       <p>
-        <button onClick={linkHandler("/")}>Go back to home page!</button>
+        <button className='btn btn-primary' onClick={linkHandler("/")}>Go back to home page!</button>
       </p>
       <p>
-        <button onClick={linkHandler("/posts")}>Go to posts page!</button>
+        <button className='btn btn-info' onClick={linkHandler("/posts")}>Go to posts page!</button>
       </p>
     </MainLayout>
   );
