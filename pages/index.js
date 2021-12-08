@@ -1,6 +1,9 @@
+import { useRouter } from "next/router";
 import { MainLayout } from "./../layouts";
 
 const Index = () => {
+  const router = useRouter();
+
   return (
     <MainLayout title={'Main page'}>
       <h1>Hello from Index page!</h1>
@@ -9,6 +12,7 @@ const Index = () => {
         est saepe, aut fugiat. Praesentium quia repudiandae laboriosam fugiat ut
         accusantium voluptas, officia, eum fuga in dolorum dolores voluptatibus.
       </p>
+      <p>Query: {router?.query?.search}</p>
     </MainLayout>
   );
 };
