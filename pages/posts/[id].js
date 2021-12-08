@@ -1,10 +1,28 @@
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { MainLayout } from "../../layouts";
+import { sleep } from "../../services/sleep";
 
-const Post = ({ post }) => {
+const Post = () => {
+  const [post, setPost] = useState({});
   const {
     query: { id },
   } = useRouter();
+
+  useEffect(() => {
+    void (async function () {
+      try {
+        const res = await fetch(
+          `https://jsonplaceholder.typicode.com/posts/${id}`
+        );
+        let post = await res.json();
+        await sleep(2000);
+        setPost(post);
+      } catch (error) {
+        console.error("error: ", error);
+      }
+    })();
+  }, [id]);
 
   return (
     <MainLayout title={`Post: ${id}`}>
@@ -16,25 +34,3 @@ const Post = ({ post }) => {
 };
 
 export default Post;
-
-export async function getStaticPaths() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const posts = await res.json();
-
-  const paths = posts.map((post) => ({ params: { id: String(post.id) } }));
-
-  return { paths, fallback: false };
-}
-
-export async function getStaticProps({ params }) {
-  try {
-    const res = await fetch(
-      `https://jsonplaceholder.typicode.com/posts/${params.id}`
-    );
-    let post = await res.json();
-
-    return { props: { post } };
-  } catch (error) {
-    console.error("error: ", error);
-  }
-}
