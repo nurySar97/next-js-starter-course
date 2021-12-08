@@ -1,7 +1,9 @@
 import { useRouter } from "next/router";
+import path from "path";
+import fs from "fs";
 import { MainLayout } from "../../layouts";
 
-const Post = ({ post }) => {
+const Post = ({ post, text, __html }) => {
   const {
     query: { id },
   } = useRouter();
@@ -11,6 +13,8 @@ const Post = ({ post }) => {
       <h1>
         <pre>{JSON.stringify(post, null, 2)}</pre>
       </h1>
+      <p>{text}</p>
+      <div dangerouslySetInnerHTML={{ __html }} />
     </MainLayout>
   );
 };
@@ -27,13 +31,23 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+  const rootDir = process.cwd();
   try {
     const res = await fetch(
       `https://jsonplaceholder.typicode.com/posts/${params.id}`
     );
     let post = await res.json();
 
-    return { props: { post } };
+    const text = fs.readFileSync(
+      path.join(rootDir, "data", "text.txt"),
+      "utf-8"
+    );
+
+    const __html = fs.readFileSync(
+      path.join(rootDir, "data", "cms-headless.html"),
+      "utf-8"
+    );
+    return { props: { post, text, __html } };
   } catch (error) {
     console.error("error: ", error);
   }
