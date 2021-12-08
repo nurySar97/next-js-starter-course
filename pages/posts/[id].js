@@ -17,16 +17,24 @@ const Post = ({ post }) => {
 
 export default Post;
 
-export async function getServerSideProps(props) {
-  const { id } = props.query;
-  let post = {};
+export async function getStaticPaths() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const posts = await res.json();
 
-  if (id) {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
-    post = await res.json();
+  const paths = posts.map((post) => ({ params: { id: String(post.id) } }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  try {
+    const res = await fetch(
+      `https://jsonplaceholder.typicode.com/posts/${params.id}`
+    );
+    let post = await res.json();
+
+    return { props: { post } };
+  } catch (error) {
+    console.error("error: ", error);
   }
-
-  return {
-    props: { post },
-  };
 }

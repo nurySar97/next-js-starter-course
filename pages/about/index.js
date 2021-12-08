@@ -3,7 +3,7 @@ import { useState } from "react";
 import { MainLayout } from "../../layouts";
 
 const About = () => {
-  const [value, setValue] = useState()
+  const [value, setValue] = useState(1)
   const linkHandler = (path = "/") => {
     return () => Router.push(path);
   };
@@ -21,11 +21,17 @@ const About = () => {
       </p>
 
       <p>
-        <button onClick={()=>Router.push(`/posts/${value}`)}>Post: {value}</button>
+        <button onClick={()=>Router.push(`/posts/${value}`)} disabled={!value}>Post: {value}</button>
       </p>
 
       <p>
-        <input type="number" value={value} onChange={e=>setValue(e.target.value)} />
+        <input type="number" value={value} onChange={e=>{
+          const value = +e.target.value;
+
+          if(!e.target.value || (value >= 1 && value <=100)){
+            setValue(e.target.value)
+          }
+        }} />
       </p>
 
     </MainLayout>
