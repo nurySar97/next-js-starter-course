@@ -14,7 +14,7 @@ const Posts = ({ posts, length }) => {
               <Link href={`/posts/${post.id}`}>
                 <a>
                   <div className="card w-100 h-100">
-                    <div className="card-body">
+                    <div className="card-body text-dark">
                       <h5 className="card-title text-capitalize">
                         {post.title}
                       </h5>

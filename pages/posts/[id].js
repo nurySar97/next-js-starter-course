@@ -11,19 +11,23 @@ const Post = ({ post, text, __html }) => {
   return (
     <MainLayout title={`Post: ${id}`}>
       <div className="card w-100 h-100">
-        <div className="card-body">
+        <div className="card-body text-dark">
           <h5 className="card-title text-capitalize">{post.title}</h5>
           <p className="card-text">{post.body}</p>
         </div>
       </div>
 
-      <section className="p-3">
-        <h3>Locale text.txt obtained while getStaticProps is running</h3>
+      <section className="p-3 bg-success my-3">
+        <h3>
+          Locale <span className="text-danger">text.txt </span>obtained while
+          getStaticProps is running
+        </h3>
         <p>{text}</p>
       </section>
-      <section className="p-3">
+      <section className="p-3 bg-info my-3">
         <h3>
-          Locale cms-headless.html fetched while getStaticProps is running
+          Locale <span className="text-danger">cms-headless.html</span> fetched
+          while getStaticProps is running
         </h3>
         <div className="p-3" dangerouslySetInnerHTML={{ __html }} />
       </section>

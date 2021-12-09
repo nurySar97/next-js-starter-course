@@ -14,7 +14,7 @@ const Main = (props) => {
         />
         <meta charSet="utf-8" />
       </Head>
-      <nav>
+      <nav className='bg-primary'>
         <Link href="/">
           <a>Home</a>
         </Link>
@@ -37,7 +37,6 @@ const Main = (props) => {
             top: 0;
             left: 0;
             right: 0;
-            background-color: darkblue;
             display: flex;
             justify-content: space-around;
             align-items: center;
