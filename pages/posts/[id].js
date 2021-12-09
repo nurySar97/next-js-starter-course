@@ -12,6 +12,7 @@ const Post = ({ post, text, __html }) => {
     <MainLayout title={`Post: ${id}`}>
       <div className="card w-100 h-100">
         <div className="card-body text-dark">
+          <h4>Post №{id}</h4>
           <h5 className="card-title text-capitalize">{post.title}</h5>
           <p className="card-text">{post.body}</p>
         </div>
