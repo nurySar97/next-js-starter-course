@@ -41,6 +41,7 @@ const Main = (props) => {
             display: flex;
             justify-content: space-around;
             align-items: center;
+            z-index: 50;
           }
 
           nav a {

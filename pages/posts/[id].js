@@ -10,11 +10,23 @@ const Post = ({ post, text, __html }) => {
 
   return (
     <MainLayout title={`Post: ${id}`}>
-      <h1>
-        <pre>{JSON.stringify(post, null, 2)}</pre>
-      </h1>
-      <p>{text}</p>
-      <div dangerouslySetInnerHTML={{ __html }} />
+      <div className="card w-100 h-100">
+        <div className="card-body">
+          <h5 className="card-title text-capitalize">{post.title}</h5>
+          <p className="card-text">{post.body}</p>
+        </div>
+      </div>
+
+      <section className="p-3">
+        <h3>Locale text.txt obtained while getStaticProps is running</h3>
+        <p>{text}</p>
+      </section>
+      <section className="p-3">
+        <h3>
+          Locale cms-headless.html fetched while getStaticProps is running
+        </h3>
+        <div className="p-3" dangerouslySetInnerHTML={{ __html }} />
+      </section>
     </MainLayout>
   );
 };
