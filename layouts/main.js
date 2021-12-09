@@ -24,6 +24,9 @@ const Main = (props) => {
         <Link href="/posts">
           <a>Posts</a>
         </Link>
+        <Link href="/website">
+          <a>Website</a>
+        </Link>
       </nav>
       <main>{children}</main>
       <style jsx>

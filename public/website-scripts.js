@@ -1,7 +1,8 @@
 void (async function () {
-  const a = await fetch("https://code.jquery.com/jquery-3.6.0.min.js");
-  const jquery = await a.text();
-  eval(jquery);
+  const response = await fetch("https://code.jquery.com/jquery-3.6.0.min.js");
+  const js = await response.text();
+
+  eval(js);
 
   $(function () {
     $(".menu-link").click(function () {
