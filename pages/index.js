@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { MainLayout } from "./../layouts";
-import Counter from "./../components/counter";
+import { Counter } from "./../components";
 
 const Index = () => {
   const router = useRouter();

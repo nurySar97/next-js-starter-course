@@ -17,26 +17,24 @@ const Default = () => {
     Router.push(`/posts/${value}`);
   };
   return (
-    <div className="row">
-      <div className="col-12 col-sm-6 col-md-4">
+    <div className="row justify-content-center">
+      <div className="col-12 col-sm-6 col-md-4 text-center">
         <form className="form" onSubmit={onHandleSubmit}>
-          <div className="input-group mb-3">
-            <div>
-              <label htmlFor="basic-url">Please enter page id.</label>
-              <div className="input-group mb-3">
-                <div className="input-group-prepend">
-                  <span className="input-group-text">ID</span>
-                </div>
-                <input
-                  id="basic-url"
-                  type="text"
-                  className="form-control"
-                  placeholder="Page id"
-                  type="number"
-                  value={value}
-                  onChange={onHandleInputChange}
-                />
+          <div>
+            <label htmlFor="basic-url">Please enter page id.</label>
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text">ID</span>
               </div>
+              <input
+                id="basic-url"
+                type="text"
+                className="form-control"
+                placeholder="Page id"
+                type="number"
+                value={value}
+                onChange={onHandleInputChange}
+              />
             </div>
           </div>
 

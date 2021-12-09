@@ -1,15 +1,17 @@
 import { MainLayout } from "../../layouts";
 import Link from "next/link";
+import { PostNav } from "./../../components";
 
 const Posts = ({ posts, length }) => {
   return (
     <MainLayout title={"Posts page"}>
-      <h1>Posts length: {length}</h1>
+      <h1 className="text-center">Total count of posts {length}</h1>
+      <PostNav />
       <div className="container">
         <div className="row">
           {posts.map((post) => (
-            <div className="col-12 col-sm-6 col-md-4 py-3">
-              <Link href={`posts/${post.id}`}>
+            <div className="col-12 col-sm-6 col-md-4 py-3" key={post.id}>
+              <Link href={`/posts/${post.id}`}>
                 <a>
                   <div className="card w-100 h-100">
                     <div className="card-body">

@@ -1,7 +1,11 @@
 import { counterSlice } from "../slices";
 
 // obtain actions from slice
-const { increment, decrement } = counterSlice.actions;
+const {
+  increment: incrementAC,
+  decrement: decrementAC,
+  resetCount: resetCountAC,
+} = counterSlice.actions;
 
 // export slices
-export { increment, decrement };
+export { incrementAC, decrementAC, resetCountAC };
