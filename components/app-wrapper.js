@@ -1,4 +1,4 @@
-import React, { useCallback, useLayoutEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { incrementAC } from "../store/actions";
 
@@ -9,7 +9,7 @@ const Default = ({ children }) => {
     dispatch(incrementAC());
   }, [incrementAC]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     document.addEventListener("click", clickHandler);
 
     return () => document.removeEventListener("click", clickHandler);
