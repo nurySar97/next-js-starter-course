@@ -30,6 +30,9 @@ const Main = (props) => {
         <Link href="/styled">
           <a>Styled</a>
         </Link>
+        <Link href="/todos">
+          <a>Todos</a>
+        </Link>
       </nav>
       <main>{children}</main>
       <style jsx>
